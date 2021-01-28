@@ -2,6 +2,7 @@
 一键获取我仓库所有需要互助类脚本的互助码(邀请码)(其中京东赚赚jd_jdzz.js如果今天达到5人助力则不能提取互助码)
 没必要设置(cron)定时执行，需要的时候，自己手动执行一次即可
 
+
 更新地址：https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_get_share_code.js
 已支持IOS双京东账号, Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js
