@@ -1,4 +1,4 @@
-name: sync- danwangshimoluo -scripts
+name: sync- xuexi2021 -scripts
 on:
   schedule:
     - cron: '1 0,15 * * *'
