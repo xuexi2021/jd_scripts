@@ -1,4 +1,4 @@
-name: sync- danwangshimoluo -scripts
+name: sync-danwangshi-scripts
 on:
   schedule:
     - cron: '1 0,15 * * *'
@@ -6,13 +6,14 @@ on:
   watch:
     types: started
   push:
-    branches: [ main ]
+    branches: [ master ]
   repository_dispatch:
-    types: sync- danwangshimoluo -scripts
+    types: sync-lxk0301-scripts
 jobs:
   repo-sync:
     env:
       PAT: ${{ secrets.PAT }} #此处PAT需要申请，教程详见：https://www.jianshu.com/p/bb82b3ad1d11
+      dst_key: ${{ secrets.GITEE_PRIVATE_KEY }} # 我自己同步到gitee使用，其他人可忽略
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
@@ -20,11 +21,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync  danwangshimoluo -scripts
+      - name: sync danwangshi-scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/danwangshimoluo/JdScripts.git"
-          source_branch: "main"
+          source_repo: "https://gitee.com/danwangshimoluo/jdTools.git"
+          source_branch: "JdScripts"
           destination_branch: "main"
           github_token: ${{ secrets.PAT }}
