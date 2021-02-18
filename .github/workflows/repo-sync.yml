@@ -1,3 +1,4 @@
+# File: .github/workflows/repo-sync.yml
 name: sync- danwangshimoluo -scripts
 on:
   schedule:
